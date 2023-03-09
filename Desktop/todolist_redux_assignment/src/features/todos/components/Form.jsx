@@ -7,6 +7,7 @@ import { addTodo } from "../../../redux/modules/todos.js";
 const Form = () => {
   const id = nextId();
   
+  const dispatch = useDispatch();
   const [todo, setTodo] = useState({
     id: 0,
     title: "",
