@@ -24,8 +24,8 @@ export const deleteTodo = (payload) => {
 // Todo를 isDone를 변경하는 action creator
 export const toggleStatusTodo = (payload) => {
   return {
-    type: TOGGLE_STATUS_TODO,
-    payload,
+      type: TOGGLE_STATUS_TODO,
+      payload
   };
 };
 
@@ -65,17 +65,17 @@ const todos = (state = initialState, action) => {
 
     case TOGGLE_STATUS_TODO:
       return {
-        ...state,
-        todos: state.todos.map((todo) => {
-          if (todo.id === action.payload) {
-            return {
-              ...todo,
-              isDone: !todo.isDone,
-            };
-          } else {
-            return todo;
-          }
-        }),
+          ...state,
+          todos: state.todos.map((todo) => {
+            if (todo.id === action.payload) {
+              return {
+                ...todo,
+                isDone: !todo.isDone,
+              };
+            } else {
+              return todo;
+            }
+          })
       };
 
     case GET_TODO_BY_ID:
@@ -91,7 +91,7 @@ const todos = (state = initialState, action) => {
         ...state,
         todos: state.todos.filter((todo) => todo.id !== action.payload),
       };
-      
+
     default:
       return state;
   }
