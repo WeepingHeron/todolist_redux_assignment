@@ -74,7 +74,7 @@ const List = () => {
                   </StButton>
                   <StButton
                     borderColor="green"
-                    onClick={onToggleStatusTodo(todo.id)}
+                    onClick={() => onToggleStatusTodo(todo.id)}
                   >
                     {todo.isDone ? "취소!" : "완료!"}
                   </StButton>
